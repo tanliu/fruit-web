@@ -1,0 +1,9 @@
+{"data":[
+  {"id":1,"createTime":"2017-02-20 10:24:21","information":"品种信息","expirationdate":"6个月","name":"沙田柚","pictures":"1429959941003078531.jpg;1429959941003078532.jpg;","grade":"1","number":"12123410","year":"12","type":"1","size":"1","storage":"阴凉环境下存储"},
+  {"id":2,"createTime":"2017-02-20 10:24:21","information":"品种信息","expirationdate":"6个月","name":"青苹果","pictures":"1429959941003078531.jpg;1429959941003078532.jpg;","grade":"1","number":"12123411","year":"12","type":"1","size":"1","storage":"阴凉环境下存储"},
+  {"id":3,"createTime":"2017-02-20 10:24:21","information":"品种信息","expirationdate":"6个月","name":"哈密瓜","pictures":"1429959941003078531.jpg;1429959941003078532.jpg;","grade":"1","number":"12123412","year":"12","type":"1","size":"1","storage":"阴凉环境下存储"},
+  {"id":4,"createTime":"2017-02-20 10:24:21","information":"品种信息","expirationdate":"6个月","name":"泰国芒果","pictures":"1429959941003078531.jpg;1429959941003078532.jpg;","grade":"1","number":"12123413","year":"12","type":"1","size":"1","storage":"阴凉环境下存储"}]
+,"page":1,
+  "pageSize":10,
+  "skip":0,
+  "total":4}

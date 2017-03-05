@@ -1,0 +1,218 @@
+[
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1ac4af000b",
+    "authorityName": "用户管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/user_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1fbc500016",
+    "authorityName": "基本信息管理",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d20d4650017",
+    "authorityName": "学生基本信息",
+    "parentId": "8a8fa1e0556cc0a301556d1fbc500016",
+    "url": "/student/student_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d258b6d001f",
+    "authorityName": "教师开课信息",
+    "parentId": "8a8fa1e0556cc0a301556d228b340019",
+    "url": "/course/course_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d26ca0c0021",
+    "authorityName": "国家助学金",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a",
+    "url": "/grantscholarship/grantscholarship_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d28267b0024",
+    "authorityName": "辅导记录维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b",
+    "url": "/tutor/tutor_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d28e02e0026",
+    "authorityName": "考勤课程维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b",
+    "url": "/attendancemaster/attendancemaster_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2929c00027",
+    "authorityName": "学科竞赛维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b",
+    "url": "/subjectcontest/subjectcontest_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d29b2f80028",
+    "authorityName": "培训信息",
+    "parentId": "8a8fa1e0556cc0a301556d23e1a5001c",
+    "url": "/train/trainmaster_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2a6b04002a",
+    "authorityName": "学籍异动信息",
+    "parentId": "8a8fa1e0556cc0a301556d244fa0001d",
+    "url": "/stustatus/stustatus_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2b2c0c002c",
+    "authorityName": "党团关系管理",
+    "parentId": "8a8fa1e0556cc0a301556d24ff65001e",
+    "url": "/polstatus/polstatus_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576cb4a590091",
+    "authorityName": "导学内容维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b",
+    "url": "/guicontent/guicontent_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576eba4e103ce",
+    "authorityName": "导学名单维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b",
+    "url": "/guilist/guilist_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1df5577027201557739174501ce",
+    "authorityName": "考勤信息维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b",
+    "url": "/attendancedetail/attendancedetail_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1c4b38000c",
+    "authorityName": "角色管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/role_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d21c38f0018",
+    "authorityName": "教师基本信息",
+    "parentId": "8a8fa1e0556cc0a301556d1fbc500016",
+    "url": "/teacher/teacher_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d228b340019",
+    "authorityName": "学生学习情况",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d263f200020",
+    "authorityName": "学生选课成绩",
+    "parentId": "8a8fa1e0556cc0a301556d228b340019",
+    "url": "/course/coursegrade_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d276a0f0022",
+    "authorityName": "国家奖学金",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a",
+    "url": "/couscholarship/couscholarship_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d29fc210029",
+    "authorityName": "培训结果",
+    "parentId": "8a8fa1e0556cc0a301556d23e1a5001c",
+    "url": "/train/traindetail_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2ab18f002b",
+    "authorityName": "档案邮寄信息",
+    "parentId": "8a8fa1e0556cc0a301556d244fa0001d",
+    "url": "/postinfo/postinfo_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2b6ee0002d",
+    "authorityName": "学生职务信息",
+    "parentId": "8a8fa1e0556cc0a301556d24ff65001e",
+    "url": "/studentdutys/studentdutys_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1ce617000d",
+    "authorityName": "权限管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/authority_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2319a7001a",
+    "authorityName": "奖助贷信息",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d27a5520023",
+    "authorityName": "贷款信息",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a",
+    "url": "/loanscholarship/loanscholarship_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dccd4b00052",
+    "authorityName": "修改学生信息",
+    "parentId": "8a8fa1e0556cc0a301556d20d4650017",
+    "url": "/student/student_editor.action"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c20155737583f40002",
+    "authorityName": "普通奖学金",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a",
+    "url": "/comscholarship/comscholarship_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1dc6bc000e",
+    "authorityName": "部门信息",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/organize_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2384de001b",
+    "authorityName": "辅导培训信息",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1e58aa000f",
+    "authorityName": "数据字典",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/systemddl_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d23e1a5001c",
+    "authorityName": "学生干部信息",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d244fa0001d",
+    "authorityName": "档案信息管理",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0556e60f601556e6436420001",
+    "authorityName": "登录日志",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/log_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d24ff65001e",
+    "authorityName": "身份信息管理",
+    "parentId": "0",
+    "url": ""
+  },
+  {
+    "authorityId": "8a8fa1e0557a95b601557a9a176b0000",
+    "authorityName": "模板管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009",
+    "url": "/system/model_listUI.action"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1624b80009",
+    "authorityName": "系统管理",
+    "parentId": "0",
+    "url": ""
+  }
+]
