@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="../../verdors/jquery/dist/jquery.min.js"></script>
+    <style type="text/css">
+
+        body{
+            font-family: 'Oleo Script', cursive;
+        }
+
+        .lg-container{
+            width:275px;
+            margin:100px auto;
+            padding:20px 40px;
+            border:1px solid #f4f4f4;
+            background:rgba(255,255,255,.5);
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+
+            -webkit-box-shadow: 0 0 2px #aaa;
+            -moz-box-shadow: 0 0 2px #aaa;
+        }
+        .lg-container h1{
+            font-size:40px;
+            text-align:center;
+        }
+        #lg-form > div {
+            margin:10px 5px;
+            padding:5px 0;
+        }
+        #lg-form label{
+            /*display: none;*/
+            font-size: 18px;
+            line-height: 25px;
+        }
+        #lg-form input[type="text"],
+        #lg-form input[type="password"]{
+            border:1px solid rgba(51,51,51,.5);
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+            padding: 5px;
+            font-size: 16px;
+            line-height: 20px;
+            width: 100%;
+            font-family: 'Oleo Script', cursive;
+            text-align:center;
+        }
+
+        #lg-form button{
+            font-family: 'Oleo Script', cursive;
+            font-size: 18px;
+            border:1px solid #000;
+            padding:5px 10px;
+            border:1px solid rgba(51,51,51,.5);
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+
+            -webkit-box-shadow: 2px 1px 1px #aaa;
+            -moz-box-shadow: 2px 1px 1px #aaa;
+            cursor:pointer;
+        }
+        #lg-form button:active{
+            -webkit-box-shadow: 0px 0px 1px #aaa;
+            -moz-box-shadow: 0px 0px 1px #aaa;
+        }
+        #lg-form button:hover{
+            background:#f4f4f4;
+        }
+        .submit-button{
+            text-align: center;
+        }
+        #message{width:100%;text-align:center}
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#login").click(function(){
+
+
+
+                //登录验证用户名、密码不为空
+                var username = $("#username").val();
+                if (username==null || username==""){
+                    $("#message").html('<p class="error">请输入帐号</p>');
+                    return false;
+                }
+
+                password = $("#password").val();
+                if (password==null || password==""){
+                    $("#message").html('<p class="error">请输入密码</p>');
+                    return false;
+                }
+                //$('#wrap input[name="payMethod"]:checked ').val();
+                select_type = $("#select_type input[name=type]:checked").val();
+                if (select_type==null || select_type==""){
+                    $("#message").html('<p class="error">请选择类型</p>');
+                    return false;
+                }
+
+                var action = $("#lg-form").attr('action');
+                var form_data = {
+                    "username": username,
+                    "password": password,
+                    "type":select_type
+                };
+                alert(action);
+                alert(form_data.type);
+                $.ajax({
+                    type: "POST",
+                    url: action,
+                    data: form_data,
+                    dataType: "json",
+                    success: function(data)
+                    {
+/*                        if(data.status==200)
+                            $("#lg-form").slideUp('slow', function(){
+                                $("#message").html('<p class="success">登陆成功！！</p><p>正在跳转....</p>');
+                                window.location.href=data.meg;
+                            });
+                        else
+                            $("#message").html("<p class='error'>"+data.meg+"</p>");*/
+                     alert(data.meg);
+                    },
+                    error:function(data){
+                        alert("error");
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+    <link rel="shortcut icon" type="image/ico" href="/favicon.png">
+    <title>登陆界面</title>
+</head>
+<body>
+<div class="lg-container">
+    <h1>水果溯源系统</h1>
+    <form action="http://127.0.0.1:8080/user/index" id="lg-form" name="lg-form" method="post">
+
+        <div>
+            <label for="username">用户名:</label>
+            <input type="text" name="username" id="username" placeholder="用户名"/>
+        </div>
+
+        <div>
+            <label for="password">密码:</label>
+            <input type="password" name="password" id="password" placeholder="密码" />
+        </div>
+        <div id="select_type">
+            <label  class="radio-inline">
+                <input type="radio" name="type"  value="farmer"> 种植户
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="type" value="admin"> 管理员
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="type"  value="inspector"> 质检员
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="type"  value="logistics"> 运输员
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="type" value="dealer"> 经销商
+            </label>
+        </div>
+        <div class="submit-button">
+            <button type="submit" id="login">登陆</button>
+        </div>
+
+    </form>
+    <div id="message"></div>
+</div>
+</body>
+
+</html>
