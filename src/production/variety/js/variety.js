@@ -1,14 +1,14 @@
 /**
  * Created by TanLiu on 2017/3/3.
  */
-
-
-
-
-
-
+var saveUrl="http://127.0.0.1:8080/variety/add";
+var editUrl="http://127.0.0.1:8080/variety/getVarietyDetail";
+var listUrl="http://127.0.0.1:8080/variety/showVarieties";
+var addHtml="add.html";
+var editHtml="edit.html";
 
 $(function(){
+
     $("#variety_list").DataTable({
         dom: "Blrtip",
         "lengthChange":true,
@@ -30,7 +30,7 @@ $(function(){
             //ajax请求数据
             $.ajax({
                 type: "GET",
-                url: "http://127.0.0.1:8080/variety/showVarieties",
+                url: listUrl,
                 cache: false, //禁用缓存
                 data: param, //传入组装的参数
                 dataType: "json",
@@ -49,7 +49,7 @@ $(function(){
                 text:"增加",
                 className:"btn btn-default",
                 action: function ( e, dt, node, config ) {
-                    opneModel({url:"add.html",onOK:save});
+                    opneModel({url:addHtml,onOK:save});
                     $('#myModal').on('shown.bs.modal', function () {
                         init_validator ();
                         $("#add_pic").click(function(){
@@ -139,7 +139,7 @@ function deleteitem(){
 
 function save(){
     var options={
-        url:"http://127.0.0.1:8080/variety/add",
+        url:saveUrl,
         type:"POST",
         dataType:"json",
         success: function(data){
@@ -195,7 +195,6 @@ function opneModel(options){
 
 
 function deleteVariety(id) {
-
     var meg = "确定删除该品种吗？";
     MyDialog({
         title:"提示信息",
@@ -204,9 +203,6 @@ function deleteVariety(id) {
             alert("删除成功"+id)
         }
     })
-
-
-
 }
 
 
@@ -214,13 +210,12 @@ function deleteVariety(id) {
 function revise(id){
     $.ajax({
         type: "post",
-        url: "http://127.0.0.1:8080/variety/getVarietyDetail",
+        url: editUrl,
         data: {"id":id},
         dataType: "json",
         async:false,
         success: function(data){
-
-               opneModel({url:"edit.html"});
+               opneModel({url:editHtml});
                $('#myModal').on('shown.bs.modal', function () {
                         init_validator ();
                         $("#add_pic").click(function(){
