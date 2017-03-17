@@ -138,7 +138,6 @@ function deleteitem(){
 
 
 function save(){
-
     var options={
         url:"http://127.0.0.1:8080/variety/add",
         type:"POST",
