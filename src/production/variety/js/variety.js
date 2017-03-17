@@ -1,18 +1,55 @@
 /**
  * Created by TanLiu on 2017/3/3.
  */
+
+
+
+
+
+
+
 $(function(){
     $("#variety_list").DataTable({
-        dom: "Brtip",
+        dom: "Blrtip",
         "lengthChange":true,
+        "processing" : true,
         "bServerSide" : true,
         "bStateSave" : false,
+        "iDisplayLength" : 2,
+        "iDisplayStart" : 0,
+        "ordering": false,//全局禁用排序
+        "paging": true,//开启表格分页
+        ajax: function (data, callback, settings) {
+            //封装请求参数
+            var param = {};
+            param.length = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
+            param.start = data.start;//开始的记录序号
+            param.start = (data.start / data.length)+1;//当前页码
+            var mydraw=data.draw;
+            //console.log(param);
+            //ajax请求数据
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8080/variety/showVarieties",
+                cache: false, //禁用缓存
+                data: param, //传入组装的参数
+                dataType: "json",
+                success: function (result) {
+                    var returnData = {};
+                    returnData.draw = mydraw;//这里直接自行返回了draw计数器,应该由后台返回
+                    returnData.recordsTotal = result.total;
+                    returnData.recordsFiltered = result.total;//后台不实现过滤功能，每次查询均视作全部结果
+                    returnData.data =result.data;
+                    callback(returnData);
+                }
+            });
+        },
         buttons: [
             {
                 text:"增加",
                 className:"btn btn-default",
                 action: function ( e, dt, node, config ) {
-                    opneModel({url:"add.html"});
+                    opneModel({url:"add.html",onOK:save});
                     $('#myModal').on('shown.bs.modal', function () {
                         init_validator ();
                         $("#add_pic").click(function(){
@@ -40,20 +77,6 @@ $(function(){
             },
 
         ],
-        ajax: {
-            url: "http://127.0.0.1:8088/fruit-web/src/js/variety.json",
-            type:"post",
-            dataType:"json",//返回数据类
-            dataSrc: function(data){
-                return data.data;
-
-            }
-            ,
-            error:function(){
-                alert("error");
-            }
-
-        },
         columns: [
             { data: 'name'},
             { data: 'year' },
@@ -75,7 +98,7 @@ $(function(){
             
                       return operation;
             },
-                "sWidth" : "5%",},
+                "sWidth" : "8%",},
 
         ],
         "oLanguage" : { // 国际化配置
@@ -112,8 +135,30 @@ function deleteitem(){
 
 }
 
+
+
+function save(){
+
+    var options={
+        url:"http://127.0.0.1:8080/variety/add",
+        type:"POST",
+        dataType:"json",
+        success: function(data){
+            var status=data.status;
+            if(status==200){
+                alert("保存成功");
+            }
+        },
+        error:function(){alert("保存失败！");}
+
+    };
+
+    $("#addform").ajaxSubmit(options);
+}
+
+
 function add(){
-opneModel("add.html");
+
 
 }
 
@@ -124,7 +169,6 @@ function editor(){
 
 }
 function opneModel(options){
-
     $.ajax({
         url:options.url,
         type:"GET",
@@ -133,9 +177,7 @@ function opneModel(options){
             MyDialog({
                 title:"添加品种信息",
                 content: data,
-                onOK:function () {
-                    alert($("#tanliu").text());
-                }
+                onOK:options.onOK
             });
         },
         error:function () {
@@ -169,26 +211,43 @@ function deleteVariety(id) {
 }
 
 
+
 function revise(id){
     $.ajax({
         type: "post",
         url: "http://127.0.0.1:8080/variety/getVarietyDetail",
         data: {"id":id},
-        dataType: "jsonp",
-        jsonp:"callback",
-        crossDomain:true,
+        dataType: "json",
+        async:false,
         success: function(data){
-               alert(data);
+
+               opneModel({url:"edit.html"});
+               $('#myModal').on('shown.bs.modal', function () {
+                        init_validator ();
+                        $("#add_pic").click(function(){
+                            $("#uploadDiv").append(" <input id=\"file\" class=\"form-control col-md-7 col-xs-12\" name=\"file\"  type=\"file\">");
+                        });
+                    });
+               addData({
+                   id:"editform",
+                   ignore:["pictures"]
+               },data);
 
         },
         error : function (XMLHttpRequest, textStatus, errorThrown){
             alert("error");
         }
     });
+}
 
-
-
-
+function addData(options,data) {
+    for(var o in data){
+        if ($.inArray(o, options.ignore)!=-1){
+            continue;
+        }
+        selector="#"+options.id+" input[name=\'"+o+"\']";
+        $(selector).val(data[o]);
+    }
 }
 
 function showImages(id,pictures){
@@ -225,30 +284,7 @@ function showImages(id,pictures){
     });
 }
 
-/*
-function login(){
-    var form_data = {
-        "username": "admin0",
-        "password": "123456",
-        "type":"admin",
-    };
-    action="http://127.0.0.1:8080/user/index";
 
-    $.ajax({
-        type: "POST",
-        url: action,
-        data: form_data,
-        dataType: "json",
-        success: function(data)
-        {
-            alert("登录成功");
-        },
-        error:function(data){
-          alert(data);
-        }
-    });
-}
-*/
 
 
 
