@@ -1653,14 +1653,14 @@ function init_daterangepicker() {
 
     var cb = function(start, end, label) {
         console.log(start.toISOString(), end.toISOString(), label);
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('#reportrange').val(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
     };
 
     var optionSet1 = {
         startDate: moment().subtract(29, 'days'),
         endDate: moment(),
         minDate: '01/01/2012',
-        maxDate: '12/31/2015',
+        maxDate: '12/31/2060',
         dateLimit: {
             days: 60
         },
@@ -1670,32 +1670,34 @@ function init_daterangepicker() {
         timePickerIncrement: 1,
         timePicker12Hour: true,
         ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            '今天': [moment(), moment()],
+            '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            '最近7日': [moment().subtract(6, 'days'), moment()],
+            '最近30日': [moment().subtract(29, 'days'), moment()],
+            '本月': [moment().startOf('month'), moment().endOf('month')],
+            '上月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         },
         opens: 'left',
         buttonClasses: ['btn btn-default'],
         applyClass: 'btn-small btn-primary',
         cancelClass: 'btn-small',
-        format: 'MM/DD/YYYY',
+        format: 'YYYY-MM-DD',
         separator: ' to ',
         locale: {
-            applyLabel: 'Submit',
-            cancelLabel: 'Clear',
-            fromLabel: 'From',
-            toLabel: 'To',
-            customRangeLabel: 'Custom',
-            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            applyLabel: '确定',
+            cancelLabel: '取消',
+            fromLabel: '起始时间',
+            toLabel: '结果时间',
+            format: 'YYYY-MM-DD',
+            customRangeLabel: '自定义',
+            daysOfWeek: [ '日', '一', '二', '三', '四', '五', '六' ],
+            monthNames:[ '一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月' ],
             firstDay: 1
         }
     };
 
-    $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+    $('#reportrange').val(moment().subtract(29, 'days').format('YYYY-MM-DD') + ' - ' + moment().format('YYYY-MM-DD'));
     $('#reportrange').daterangepicker(optionSet1, cb);
     $('#reportrange').on('show.daterangepicker', function() {
         console.log("show event fired");
@@ -1807,25 +1809,20 @@ function init_daterangepicker_single_call() {
 
     $('#time_begin').daterangepicker({
         singleDatePicker: true,
-        singleClasses: "picker_1"
+        singleClasses: "picker_1",
+        defaultDate:"",
+        locale: {
+            format: 'YYYY-MM-DD'
+        }
     }, function(start, end, label) {
         console.log(start.toISOString(), end.toISOString(), label);
     });
     $('#time_end').daterangepicker({
         singleDatePicker: true,
-        singleClasses: "picker_1"
-    }, function(start, end, label) {
-        console.log(start.toISOString(), end.toISOString(), label);
-    });
-    $('#single_cal3').daterangepicker({
-        singleDatePicker: true,
-        singleClasses: "picker_3"
-    }, function(start, end, label) {
-        console.log(start.toISOString(), end.toISOString(), label);
-    });
-    $('#single_cal4').daterangepicker({
-        singleDatePicker: true,
-        singleClasses: "picker_4"
+        singleClasses: "picker_1",
+        locale: {
+            format: 'YYYY-MM-DD'
+        }
     }, function(start, end, label) {
         console.log(start.toISOString(), end.toISOString(), label);
     });
@@ -1836,6 +1833,47 @@ function init_daterangepicker_single_call() {
 
 function init_daterangepicker_reservation() {
 
+
+
+    var myoptionSet1 = {
+        startDate: moment().subtract(29, 'days'),
+        endDate: moment(),
+        minDate: '01/01/2012',
+        maxDate: '12/31/2014',
+        dateLimit: {
+            days: 60
+        },
+        showDropdowns: true,
+        showWeekNumbers: false,
+        timePicker: false,
+        timePickerIncrement: 1,
+        timePicker12Hour: true,
+        ranges: {
+            '今天': [moment(), moment()],
+            '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            '最近7天': [moment().subtract(6, 'days'), moment()],
+            '最近30天': [moment().subtract(29, 'days'), moment()],
+            '本月': [moment().startOf('month'), moment().endOf('month')],
+            '上月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        opens: 'right',
+        buttonClasses: ['btn btn-default'],
+        applyClass: 'btn-small btn-primary',
+        cancelClass: 'btn-small',
+        format: 'YYYY-MM-DD',
+        separator: ' to ',
+        locale: {
+            applyLabel: 'Submit',
+            cancelLabel: 'Clear',
+            fromLabel: 'From',
+            toLabel: 'To',
+            customRangeLabel: 'Custom',
+            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            firstDay: 1
+        }
+    };
+
     if( typeof ($.fn.daterangepicker) === 'undefined'){ return; }
     console.log('init_daterangepicker_reservation');
 
@@ -1843,12 +1881,8 @@ function init_daterangepicker_reservation() {
         console.log(start.toISOString(), end.toISOString(), label);
     });
 
-    $('#reservation-time').daterangepicker({
-        timePicker: true,
-        timePickerIncrement: 30,
-        locale: {
-            format: 'MM/DD/YYYY h:mm A'
-        }
+    $('#reservation-time').daterangepicker(myoptionSet1,function(start, end, label) {//格式化日期显示框
+        $('#reportrange').val(start.format('YYYY-MM-DD HH:mm:ss') + ' - ' + end.format('YYYY-MM-DD HH:mm:ss'));
     });
 
 }
@@ -2578,11 +2612,7 @@ function  init_calendar() {
 
 };
 
-/* DATA TABLES */
 
-function init_DataTables() {
-
-};
 
 /* CHART - MORRIS  */
 
@@ -5036,10 +5066,10 @@ $(document).ready(function() {
     init_ColorPicker();
     init_TagsInput();
     init_parsley();
-    init_daterangepicker();
-    init_daterangepicker_right();
+   init_daterangepicker();
+    //init_daterangepicker_right();
     init_daterangepicker_single_call();
-    init_daterangepicker_reservation();
+    //init_daterangepicker_reservation();
     init_SmartWizard();
     init_EasyPieChart();
     init_charts();
@@ -5048,7 +5078,8 @@ $(document).ready(function() {
     init_skycons();
     init_select2();
     init_validator();
-    init_DataTables();
+   // init_DataTables();
+    //init_tableList();
     init_chart_doughnut();
     init_gauge();
     init_PNotify();

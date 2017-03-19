@@ -1,43 +1,28 @@
 /**
  * Created by TanLiu on 2017/3/3.
  */
-var saveUrl=baseUrl+"/variety/add";
-var detailUrl=baseUrl+"/variety/getVarietyDetail";
-var updataUrl=baseUrl+"/variety/updateVariety"
-var listUrl=baseUrl+"/variety/showVarieties";
-var deleteUrl=baseUrl+"/variety/deleteVariety";
-var deleteAllUrl=baseUrl+"/variety/deleteAllVariety"
+var saveUrl=baseUrl+"/region/addRegion";
+var detailUrl=baseUrl+"/region/getRegionDetail";
+var updataUrl=baseUrl+"/region/reviseRegion"
+var listUrl=baseUrl+"/region/showRegions";
+var deleteUrl=baseUrl+"/region/deleteRegion";
+var deleteAllUrl=baseUrl+"/region/deleteAllRegion"
 var addHtml="add.html";
 var editHtml="edit.html";
 var picturesHtml="pictures.html";
-var editTile="修改品种信息";
-var addTitle="增加回品种信息";
+var editTile="修改行政区信息";
+var addTitle="增加行政区信息";
 //设置列对应的信息
 function setColumns(){
     return  [
         {
             "render": function (data, type, full, meta) {
-
-
-
                 return '<input type="checkbox" value="'+ full.id + '" name="checkboxids"/>';
             }
         },
+        {data: 'id'},
         {data: 'name'},
-        {data: 'year'},
         {data: 'number'},
-        {
-            "render": function (data, type, full, meta) {
-                var info = full.expirationdate + "个月"
-
-
-                return info;
-            }
-        },
-        {data: 'grade'},
-        {data: 'size'},
-        {data: 'storage'},
-        {data: 'information'},
         {data: 'createTime'},
         {
             "render": function (data, type, full, meta) {
@@ -107,8 +92,7 @@ function setDeleteInfo(id){
 //设置批量删除的信息
 function setDeleteAllInfo(){
     var info=$("#userIds").val().trim();
-    if(info.length>1){
-        alert(info);
+    if(info.length>0){
         return {"ids":info};
     }
     return 0;

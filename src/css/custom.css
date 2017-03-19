@@ -1336,8 +1336,8 @@ table.jambo_table tbody tr.selected td {
     background-color: white
 }
 .dataTables_length {
-    width: 40%;
-    float: left
+    width: 7%;
+    float: right;
 }
 .dataTables_filter {
     width: 50%;

@@ -21,7 +21,7 @@ function MyDialog(options) {
     $("body").append($tpl)
     $tpl.modal('toggle');
     $tpl.on("click", ".js-mydialog-ok", function() {
-        $tpl.modal('hide');
+        //$tpl.modal('hide');
         $.isFunction(options.onOK) && options.onOK();
     });
 
@@ -29,5 +29,9 @@ function MyDialog(options) {
         $("#myModal").remove();
     });
 
+}
+
+function closeMyDialog() {
+    $('#myModal').modal('hide');
 }
 
