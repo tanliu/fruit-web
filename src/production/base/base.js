@@ -71,6 +71,7 @@ function save(){
         url:saveUrl,
         type:"POST",
         dataType:"json",
+        async:false,
         success: function(data){
             var status=data.status;
             if(status==200){
@@ -86,7 +87,6 @@ function save(){
         error:function(){alert("保存失败！");}
 
     };
-
     $("#addform").ajaxSubmit(options);
 }
 //修改信息提示可以抽取
@@ -348,4 +348,35 @@ function cancelValue(para){
             userIds.val(userIds.val() + "," + array[i]);
         }
     }
+}
+
+function addInfoToSelect(url,id,param){
+    removeInfoToSelect(id);
+    $.ajax({
+        url:url,
+        type:"post",
+        data: param,
+        dataType: "json",
+        async:false,
+        success: function(data){
+            $select=$("#"+id);
+            $select.append($("<option id='-1'>所有</option>"));
+            for(var o in data){
+                $option=$("<option id="+data[o].id+">"+data[o].name+"</option>");
+                $select.append($option);
+            }
+
+        },
+
+    });
+
+}
+
+function removeInfoToSelect(id) {
+    $("#"+id+" option").each(function(){
+        $(this).remove();
+    });
+}
+function selectInfoToInput(selectid,inputId){
+    $("#"+inputId).val($("#"+selectid).find("option:selected").attr("id").trim());
 }
