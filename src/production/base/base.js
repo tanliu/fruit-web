@@ -189,16 +189,16 @@ var tableOptions= {
     "processing": true,
     "bServerSide": true,
     "bStateSave": false,
-    "iDisplayLength": 2,
+    "iDisplayLength": 10,
     "iDisplayStart": 0,
     "ordering": false,//全局禁用排序
     "paging": true,//开启表格分页
     ajax: function (data, callback, settings) {
         //封装请求参数
         var param = {};
-        param.length = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
+        param.pageSize = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
         param.start = data.start;//开始的记录序号
-        param.start = (data.start / data.length) + 1;//当前页码
+        param.page = (data.start / data.length) + 1;//当前页码
 
         param=setParam(param);
         var mydraw = data.draw;
@@ -360,7 +360,7 @@ function addInfoToSelect(url,id,param){
         async:false,
         success: function(data){
             $select=$("#"+id);
-            $select.append($("<option id='-1'>所有</option>"));
+            /*$select.append($("<option id='-1'>所有</option>"));*/
             for(var o in data){
                 $option=$("<option id="+data[o].id+">"+data[o].name+"</option>");
                 $select.append($option);
@@ -379,4 +379,87 @@ function removeInfoToSelect(id) {
 }
 function selectInfoToInput(selectid,inputId){
     $("#"+inputId).val($("#"+selectid).find("option:selected").attr("id").trim());
+}
+
+
+
+//对于select的处理
+//设置打开添加时对seletor的加载
+function setAddOrEditSeletor(){
+    addInfoToSelect(baseUrl+"/public/getAllRegionWithAll","select_region",{});
+    $("#select_region").change(function(){
+        var id=$("#select_region").find("option:selected").attr("id").trim();
+        if(id>0){
+            var param={"regionId":id}
+            addInfoToSelect(baseUrl+"/public/getVillagesByRegionWithAll","select_village",param);
+        }else{
+            removeInfoToSelect("select_village");
+        }
+        removeInfoToSelect("select_orchard");
+        removeInfoToSelect("select_productinformation");
+
+    });
+    $("#select_village").change(function(){
+        var id=$("#select_village").find("option:selected").attr("id").trim();
+        if(id>0){
+            var param={"villageId":id}
+            addInfoToSelect(baseUrl+"/public/getOrchardByVillageWithAll","select_orchard",param);
+        }else{
+            removeInfoToSelect("select_orchard");
+        }
+        removeInfoToSelect("select_productinformation");
+
+    });
+    $("#select_orchard").change(function(){
+        var id=$("#select_village").find("option:selected").attr("id").trim();
+        if(id>0){
+            var param={"orchardId":id}
+            addInfoToSelect(baseUrl+"/public/getProductByOrchardWithAll","select_productinformation",param);
+        }else{
+            removeInfoToSelect("select_productinformation");
+        }
+    });
+    $("#select_productinformation").change(function(){
+        selectInfoToInput("select_productinformation","select_input_productinformation");
+    });
+
+
+}
+function setSearchSeletor(){
+    addInfoToSelect(baseUrl+"/public/getAllRegionWithAll","list_select_region",{});
+    $("#list_select_region").change(function(){
+        var id=$("#list_select_region").find("option:selected").attr("id").trim();
+        if(id>0){
+            var param={"regionId":id}
+            addInfoToSelect(baseUrl+"/public/getVillagesByRegionWithAll","list_select_village",param);
+        }else{
+            removeInfoToSelect("list_select_village");
+        }
+        removeInfoToSelect("list_select_orchard");
+        removeInfoToSelect("list_select_productinformation");
+
+    });
+    $("#list_select_village").change(function(){
+        var id=$("#list_select_village").find("option:selected").attr("id").trim();
+        if(id>0){
+            var param={"villageId":id}
+            addInfoToSelect(baseUrl+"/public/getOrchardByVillageWithAll","list_select_orchard",param);
+        }else{
+            removeInfoToSelect("list_select_orchard");
+        }
+        removeInfoToSelect("list_select_productinformation");
+
+    });
+    $("#list_select_orchard").change(function(){
+        var id=$("#list_select_orchard").find("option:selected").attr("id").trim();
+        if(id>0){
+            var param={"orchardId":id}
+            addInfoToSelect(baseUrl+"/public/getProductByOrchardWithAll","list_select_productinformation",param);
+        }else{
+            removeInfoToSelect("list_select_productinformation");
+        }
+    });
+
+
+
 }
