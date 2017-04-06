@@ -30,9 +30,8 @@ function revise(id){
             opneModel({url:editHtml,onOK:edit,title:editTile});
             $('#myModal').on('shown.bs.modal', function () {
                 init_validator ();
-                $("#add_pic").click(function(){
-                    $("#uploadDiv").append(" <input id=\"file\" class=\"form-control col-md-7 col-xs-12\" name=\"file\"  type=\"file\">");
-                });
+                roadTree(id);
+               // setCheck(id);
             });
             addData(formInfo,data);
 
@@ -95,6 +94,7 @@ function save(){
 }
 //修改信息提示可以抽取
 function edit(){
+    setEditAuthority();
     var options={
         url:updataUrl,
         type:"POST",
@@ -183,7 +183,6 @@ function deleteAllInfo(){
     })
 }
 
-var baseUrl="http://127.0.0.1:8080"
 var table;
 var tableOptions= {
     dom: "Blrtip",
@@ -215,9 +214,9 @@ var tableOptions= {
             success: function (result) {
                 var returnData = {};
                 returnData.draw = mydraw;//这里直接自行返回了draw计数器,应该由后台返回
-                returnData.recordsTotal = result.total;
-                returnData.recordsFiltered = result.total;//后台不实现过滤功能，每次查询均视作全部结果
-                returnData.data = result.data;
+                returnData.recordsTotal = result.totalCount;
+                returnData.recordsFiltered = result.totalCount;//后台不实现过滤功能，每次查询均视作全部结果
+                returnData.data = result.items;
                 callback(returnData);
             },
             error: function () {

@@ -215,9 +215,9 @@ var tableOptions= {
             success: function (result) {
                 var returnData = {};
                 returnData.draw = mydraw;//这里直接自行返回了draw计数器,应该由后台返回
-                returnData.recordsTotal = result.total;
-                returnData.recordsFiltered = result.total;//后台不实现过滤功能，每次查询均视作全部结果
-                returnData.data = result.data;
+                returnData.recordsTotal = result.totalCount;
+                returnData.recordsFiltered = result.totalCount;//后台不实现过滤功能，每次查询均视作全部结果
+                returnData.data = result.items;
                 callback(returnData);
             },
             error: function () {

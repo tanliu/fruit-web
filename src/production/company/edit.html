@@ -1,0 +1,71 @@
+<form id="editform" class="form-horizontal form-label-left" novalidate>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="form_name">产品名称<span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="form_name" class="form-control col-md-7 col-xs-12 " name="name"  required="required" type="text">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="year">产品年份:
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="year" class="form-control col-md-7 col-xs-12" name="year" data-validate-minmax="00,99" data-validate-length="2"    required="required" type="number">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">产品编号：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="number" class="form-control col-md-7 col-xs-12" name="number" data-validate-minmax="000000,999999"  required="required" type="number">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="operation">产品保质期：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="operation" class="form-control col-md-7 col-xs-12" name="expirationdate" data-validate-minmax="0,12"  required="required" type="number">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="menuNO">产品大小：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="menuNO" class="form-control col-md-7 col-xs-12" name="size"  required="required" type="number">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="meno">存储条件：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="meno" class="form-control col-md-7 col-xs-12" name="storage"  required="required" type="text">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="grade">产品等级：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="grade" class="form-control col-md-7 col-xs-12" name="grade"  required="required" type="text">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="information">产品信息：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="information" class="form-control col-md-7 col-xs-12" name="information"  required="required" type="text">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="uploadDiv">文件：
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12" id="uploadDiv">
+            <span id="add_pic" class="btn btn-default  btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加图片</span>
+
+        </div>
+    </div>
+
+
+    <input id="id" class="form-control col-md-7 col-xs-12" name="id"   type="text" style="display:none" >
+    <input id="pictures" class="form-control col-md-7 col-xs-12" name="pictures"   type="text" style="display:none" >
+</form>
+

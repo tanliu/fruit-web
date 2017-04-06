@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>权限信息</title>
+
+    <!-- Bootstrap -->
+    <link href="../../../verdors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../../verdors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+
+     <!-- Custom Theme Style -->
+    <link href="../../css/custom.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../../css/custom.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/zTreeStyle/demo.css" type="text/css">
+    <link rel="stylesheet" href="../../css/metroStyle/metroStyle.css" type="text/css">
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div  class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>水果溯源系统</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="profile clearfix">
+                    <div class="profile_pic">
+                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div  class="profile_info">
+                        <span>Welcome,</span>
+                        <h2 id="nav_username"></h2>
+                    </div>
+                </div>
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <h3>General</h3>
+                        <ul id ="myNav" class="nav side-menu">
+                        </ul>
+                    </div>
+                </div>
+                <!-- /sidebar menu -->
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img id="UserImg" src="images/img.jpg" alt="">谭柳
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="javascript:;"> Profile</a></li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="badge bg-red pull-right">50%</span>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li><a href="javascript:;">Help</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+
+                        <li role="presentation" class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="badge bg-green">6</span>
+                            </a>
+                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="text-center">
+                                        <a>
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <!-- <h3 id="modulName">Users <small>Some examples to get you started</small></h3> -->
+                        <h3 id="modulName">权限信息 <!--<small>Some examples to get you started</small>--></h3>
+                    </div>
+
+
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <table id="table_list" >
+                                            <TR align=center>
+                                                <TD  >
+                                                    <ul id="tree" class="ztree" style="overflow:auto;"></ul>
+                                                </TD>
+                                            </TR>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-8" id="authorityDetail" hidden="hidden">
+                                        <p class="lead">权限信息详情</p>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                <tr>
+                                                    <th style="width:50%">权限名称:</th>
+                                                    <td id="authorityName"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>模块名称:</th>
+                                                    <td id="moduleName"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>访问地址:</th>
+                                                    <td id="url"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>权限类型:</th>
+                                                    <td id="authorityType"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>操作名称:</th>
+                                                    <td id="operation"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>菜单排号:</th>
+                                                    <td id="menuNo"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="../../../verdors/jquery/dist/jquery.min.js"></script>
+<script src="../../../verdors/jquery/dist/jquery-form.js"></script>
+<!-- Bootstrap -->
+<script src="../../../verdors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../../verdors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../../../verdors/nprogress/nprogress.js"></script>
+<!-- iCheck -->
+<script src="../../../verdors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="../../../verdors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../../verdors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../../verdors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../../verdors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../../../verdors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../../verdors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../../verdors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../../verdors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../../verdors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../../verdors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../../verdors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../../../verdors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../../../verdors/jszip/dist/jszip.min.js"></script>
+<script src="../../../verdors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../../verdors/pdfmake/build/vfs_fonts.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="../../../verdors/moment/min/moment.min.js"></script>
+<script src="../../../verdors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- validator -->
+<script src="../../../verdors/validator/validator.js"></script>
+
+
+
+<script src="../../js/Nav.js"></script>
+<script src="../../js/MyDialog.js"></script>
+
+<!--<script type="text/javascript" src="../../js/tree/jquery-1.4.4.min.js"></script>-->
+<script type="text/javascript" src="../../js/tree/jquery.ztree.core.min.js"></script>
+<script type="text/javascript" src="../../js/tree/jquery.ztree.excheck.min.js"></script>
+<script type="text/javascript" src="../../js/tree/jquery.ztree.exedit.js"></script>
+<SCRIPT type="text/javascript" >
+
+    var zTree;
+
+    var setting = {
+        view: {
+            addHoverDom: addHoverDom,
+            removeHoverDom: removeHoverDom,
+            dblClickExpand: false,
+            showLine: true, <!--是否显示线性-->
+            selectedMulti: false,
+            showIcon:true<!--是否显示图标-->
+        },
+        edit: {
+            enable: true,
+            editNameSelectAll: true,
+            //showRemoveBtn: showRemoveBtn,
+            //showRenameBtn: showRenameBtn
+        },
+        data: {
+            simpleData: {
+                enable:true,
+                idKey: "id",
+                pIdKey: "pId",
+                rootPId: ""
+            }
+        },
+        callback: {
+            beforeClick: beforeClick,
+            onClick: onClick,
+            beforeEditName: beforeEditName,
+            beforeRemove: beforeRemove,
+            onRemove: onRemove,
+        }
+    };
+
+    var zNodes =[
+        {id:0, pId:0, name:"学生电子档案管理系统","target":"add", open:true},
+
+    ];
+
+
+    function beforeEditName(treeId, treeNode) {
+
+        openEdit(treeNode.id);
+        return false;
+    }
+    function beforeRemove(treeId, treeNode) {
+        return confirm("确认删除权限 （ " + treeNode.name + "） 吗？");
+    }
+    function onRemove(e, treeId, treeNode) {
+        deleteAuthority(treeNode.id);
+
+    }
+
+    function beforeClick(treeId, treeNode, clickFlag) {
+
+    }
+    function onClick(event, treeId, treeNode, clickFlag) {
+       // window.parent.add.location.href="${basePath}system/authority_addUI.action?authority.parentId="+treeNode.id;
+        //window.parent.editor.location.href="${basePath}system/authority_editorUI.action?authority.authorityId="+treeNode.id;
+
+
+        $.ajax({
+            url:baseUrl+"/authority/authorityDetail",
+            type:"post",
+            dataType:"json",//返回数据类型
+            data:{"authorityId":treeNode.id},
+            success: function(result){
+                if(result!=null){
+                    setDetail(result);
+                }
+            },
+            error:function(){alert("获取权限详情失败！");}
+
+        });
+
+
+    }
+
+    function setDetail(data) {
+        $("#authorityDetail").attr("hidden","hidden");
+
+
+        for(var o in data){
+            selector="#"+o;
+            $(selector).html(data[o]);
+            if("authorityType"==o){
+                if(data[o]==1)$(selector).html("功能");
+                if(data[o]==0)$(selector).html("菜单");
+            }
+        }
+        $("#authorityDetail").removeAttr("hidden");
+    }
+
+    function add(newNodes){
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        var node = zTree.getNodeByParam("id", newNodes[0].pId);
+        //var newNodes = [ {id:103, pId:102, name:"教师基本信息", file:"core/simpleData"}, ];
+        var nodes = zTree.addNodes(node, newNodes);
+
+    }
+
+    function deleteNode(id){
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        var node = zTree.getNodeByParam("id", id);
+        var nodes =zTree.removeNode(node);
+    }
+    function editormyNode(newNodes){
+
+        //获取结点，对结点信息更改
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        var node = zTree.getNodeByParam("id", newNodes[0].id);
+        node.name=newNodes[0].name;
+        //选择删除结点
+        var nodes =zTree.removeNode(node);
+        //取得新结点的父结点
+        var pnode = zTree.getNodeByParam("id", newNodes[0].pId);
+        //把更改后的结点挂到新的结点上
+        var newnodes = zTree.addNodes(pnode, node);
+
+    }
+    function addHoverDom(treeId, treeNode) {
+       // alert("---------------");
+       var sObj = $("#" + treeNode.tId + "_span");
+        if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
+        var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+            + "' title='add node' onfocus='this.blur();'></span>";
+        sObj.after(addStr);
+        var btn = $("#addBtn_"+treeNode.tId);
+        if (btn) btn.bind("click", function(){
+            /*var zTree = $.fn.zTree.getZTreeObj("tree");
+            zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:"new node" + (newCount++)});
+            */
+            openAdd(treeNode.id);
+
+            return false;
+        });
+    };
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_"+treeNode.tId).unbind().remove();
+    };
+
+
+    $(document).ready(function(){  //异步加载
+
+        $.ajax({
+            url:baseUrl+"/authority/treeData",
+            type:"post",
+            dataType:"json",//返回数据类型
+            success: function(data){
+
+                if(data!=null){
+
+                    var dataObj=eval(data);//转换为json对象
+
+                    //把数据输入到Znodes
+                    for(var i=0;i<dataObj.length;i++){
+                        var val = {id:dataObj[i].authorityId, pId:dataObj[i].parentId, name:dataObj[i].authorityName, open:true};
+                        if(i>30){
+                            val.open=false;
+                        }
+                        zNodes.push(val);
+                    }
+                }
+                //加载树
+                var t = $("#tree");
+                t = $.fn.zTree.init(t, setting, zNodes);
+               // demoIframe = $("#testIframe");
+               // demoIframe.bind("load", loadReady);
+                var zTree = $.fn.zTree.getZTreeObj("tree");
+                //zTree.selectNode(zTree.getNodeByParam("id", 101));
+
+            },
+            error:function(){alert("加载失败！");}
+
+        });
+
+
+    });
+
+    function loadReady() {
+        var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+            htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+            maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
+            h = demoIframe.height() >= maxH ? minH:maxH ;
+        if (h < 530) h = 530;
+        demoIframe.height(h);
+    }
+
+
+</SCRIPT>
+
+
+<script type="text/javascript">
+
+    function openAdd(id){
+        opneModel({url:"authority_add.html",onOK:addAuthority,title:"增加权限信息"});
+        $('#myModal').on('shown.bs.modal', function () {
+            $.ajax({
+                url:baseUrl+"/authority/addAuthorityBefore",
+                type:"post",
+                dataType:"json",//返回数据类型
+                data:{"parentId":id},
+                success: function(result){
+                    if(result!=null){
+                        $("#addform #form_authorityId").val(result.authorityId);
+                        $("#addform #form_parentId").val(result.parentId);
+                    }
+                },
+                error:function(){alert("失败！");}
+
+            });
+        });
+    }
+
+
+    function openEdit(id){
+        opneModel({url:"authority_edit.html",onOK:editAuthority,title:"修改权限信息"});
+        $('#myModal').on('shown.bs.modal', function () {
+            $.ajax({
+                url:baseUrl+"/authority/authorityDetail",
+                type:"post",
+                dataType:"json",//返回数据类型
+                data:{"authorityId":id},
+                success: function(result){
+                    if(result!=null){
+                        setEditDetail(result);
+                    }
+                },
+                error:function(){alert("获取权限详情失败！");}
+
+            });
+        });
+    }
+
+    function setEditDetail(data){
+        for(var o in data){
+            selector="#editform #form_"+o;
+            $(selector).val(data[o]);
+            if("authorityType"==o){
+                selector="#editform #form_"+o+data[o];
+                $(selector).attr("checked","true");
+            }
+
+        }
+    }
+
+    function deleteAuthority(id){
+        $.ajax({
+            url:baseUrl+"/authority/deleteAuthority",
+            type:"post",
+            dataType:"json",//返回数据类型
+            data:{"authorityId":id},
+            success: function(result){
+                deleteNode(id)
+            },
+            error:function(){alert("删除失败！");}
+
+        });
+    }
+
+    //打开窗口（可以抽取）
+    function opneModel(options){
+        $.ajax({
+            url:options.url,
+            type:"GET",
+            async:false,
+            success:function(data){
+                MyDialog({
+                    title:options.title,
+                    content: data,
+                    onOK:options.onOK
+                });
+            },
+            error:function () {
+                MyDialog({
+                    content:"打开失败",
+                });
+            }
+        });
+
+    }
+
+    function addAuthority(){
+        var options={
+            url:baseUrl+"/authority/addAuthority",
+            type:"GET",
+            dataType:"json",
+            data:$("#addform").serialize(),
+            async:false,
+            success: function(data){
+                if(data!=0) {
+                    //var newNodes = [ {id:103, pId:302, name:"教师基本信息", file:"core/simpleData"}, ];
+                    var newNodes = [];
+
+
+                    //把数据输入到Znodes
+
+                    var val = {id: data.authorityId, pId: data.parentId, name: data.authorityName, open: true};
+                    newNodes.push(val);
+                    add(newNodes);
+                    closeMyDialog();
+                }
+
+
+
+            },
+            error:function(){alert("保存失败！");}
+
+        };
+      //  $("#addform").ajaxSubmit(options);
+        $.ajax(options);
+    }
+
+    function editAuthority(){
+        var options={
+            url:baseUrl+"/authority/editAuthority",
+            type:"GET",
+            dataType:"json",
+            data:$("#editform").serialize(),
+            async:false,
+            success: function(data){
+                if(data!=0) {
+                    //var newNodes = [ {id:103, pId:302, name:"教师基本信息", file:"core/simpleData"}, ];
+                    var newNodes = [];
+
+
+                    //把数据输入到Znodes
+
+                    var val = {id: data.authorityId, pId: data.parentId, name: data.authorityName, open: true};
+                    newNodes.push(val);
+                    editormyNode(newNodes);
+                    closeMyDialog();
+                }
+
+
+
+            },
+            error:function(){alert("保存失败！");}
+
+        };
+        //  $("#addform").ajaxSubmit(options);
+        $.ajax(options);
+    }
+</script>
+
+
+
+
+</body>
+</html>
